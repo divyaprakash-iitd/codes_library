@@ -1,0 +1,43 @@
+clear; clc; close all;
+
+BSA = @(H,W) sqrt(H.*W/3131);
+
+Wlb = @(W) W*2.20462;
+Hin = @(H) H*0.393701;
+
+% Change Height keeping weight fixed
+W = 89; % [Kg]
+n = 100;
+H = linspace(158,198,n);
+
+subplot(1,3,1)
+plot(H,BSA(H,W))
+xlabel('H [in]')
+ylabel('BSA [m^2]')
+
+% Change Weight keeping height fixed
+H = 178; % [cm]
+n = 100;
+W = linspace(55,85,n);
+BSAH = zeros(size(H));
+
+subplot(1,3,2)
+plot(W,BSA(H,W))
+xlabel('W [lb]')
+ylabel('BSA [m^2]')
+
+% Change Height and Weight simultaneously
+n = 100;
+H = linspace(158,198,n);
+W = linspace(55,85,n);
+
+[H,W] = meshgrid(H,W);
+
+subplot(1,3,3)
+surf(H,W,BSA(H,W))
+xlabel('W [lb]')
+ylabel('BSA [m^2]')
+
+
+
+
