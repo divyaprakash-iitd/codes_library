@@ -35,7 +35,7 @@ function I = integralsum(f,a,b,n,typeI)
 		I = sum(dx*f(x(2:n+1)));
 	elseif strcmp(typeI,'mid')
 		% Mid-Point Method
-		c = (a+dx/2):dx:(b-dx/2)
+		c = (a+dx/2):dx:(b-dx/2);
 		I = sum(dx*f(c));
 	else
 		printf('Invalid integration type!\n')
