@@ -25,7 +25,7 @@ function distance = DTask1_f(v,theta)
         sqrt(((v * sind(theta))^2 ...
         + 2 * g * h))) / g;         % Time taken to hit ground
     
-    tlim = 10;                      % Time limit
+    tlim = 11;                      % Time limit
     if t > tlim
         fprintf('The ball does not hit the ground in %d seconds.\n',tlim)
         distance = NaN;
