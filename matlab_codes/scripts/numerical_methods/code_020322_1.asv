@@ -1,0 +1,15 @@
+clear; clc; close all;
+
+% Description: Solves a system of ODEs
+
+% Let s = x(1), e = x(2), c = x(3) and p = x(4)
+
+function p = calculate_p(k3)
+   
+    k1 = 11;
+    k2 =    1.6
+    odefun = @(t,x) [-k1*x(1)*x(2) + k2*x(3);
+                     -k1*x(1)*x(2) + k2*x(3) + k3*x(3);
+                     k1*x(1)*x(2) - k2*x(3) - k3*x(3);
+                     k3*x(3)];
+end
