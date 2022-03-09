@@ -1,0 +1,19 @@
+clear; clc; close all;
+
+% Description: Finds roots of transfer functions
+
+w = 3;
+lamda = 1/36;
+f0 = 3;
+wf = 1;
+
+y0 = [0 0];
+tspan = [0 10];
+ode = @(b,t,y) [ y(2);
+                  f0*sin(wf*t) - 2*lamda*w*y(2) - w^2*y(1)*(1+b*y(1)^2)];
+
+for b = 0.25:-0.25:-0.25
+    odefun = @(t,y) ode()
+    [t,y] = ode45(odefun,tspan,y0);
+end
+
