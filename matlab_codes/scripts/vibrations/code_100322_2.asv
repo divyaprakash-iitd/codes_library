@@ -1,0 +1,22 @@
+clear; clc; close all;
+
+% Description: Solves a spring mass damper system
+
+% when t<t0
+t0 = 1;
+xx0_a = [0.1,1];
+
+[t1,x1] = ode45(sdof_impulse,[0,t0],xx0_a)
+
+
+function odefun = sdof_impulse(t,x)
+    m   = 10;   % [kg]
+    c   = 2;    % [Ns/m]
+    k   = 100;  % [N/m]
+    F0  = -3;   % [N]
+    t0  = 1;    % [s]
+
+    impulse = @(t,t0) zeros(size(t))
+    odefun = [x(2);
+              F0*impulse= t==t0 - c*x(2) - k*x(1)];
+end
