@@ -64,5 +64,6 @@ for it = 2:Nt
     end
     plot(t(it),P(x==0.5),'rx');
 end
+A11 = P(x==0.5);
 A10 = b;
 A12 = 0;

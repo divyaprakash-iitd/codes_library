@@ -1,0 +1,19 @@
+clear; clc; close all;
+
+% Description: Solves a system of equations
+
+A = @(c) [  1/c, -5 -2;
+            6, 3/c, 1;
+            7, 3, -5/c  ];
+b = [11, 13, 10]';
+
+c = 5
+x = A(c)\b
+
+N = 100;
+c = linspace(0.5,10,N);
+
+x = zeros(3,N);
+for i = 1:N
+    x = A(c(i))\b;
+end
