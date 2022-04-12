@@ -27,7 +27,7 @@ function ode = odefun(t,x)
     mf = 22.5;  % [kg]
     mp = 100;   % [kg]
     
-    M = @(t) mr + mp + mf - 1.5*t;
+    M = @(t) mr + mp + mf - 1.5*t*(t<=15);
     
     T = @(t) 15.20e3*(t<=15); % Thrust only till fuel lasts (15 seconds)
     
