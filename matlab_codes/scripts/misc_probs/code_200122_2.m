@@ -13,3 +13,5 @@ fprintf('Range: %d\n',R)
 s = std(D(:));
 fprintf('Standard deviation: %.2f\n',s)
 
+
+

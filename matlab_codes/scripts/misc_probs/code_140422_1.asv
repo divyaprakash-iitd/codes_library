@@ -1,0 +1,17 @@
+clear; clc; close all;
+
+% Description: Creates a pyramid matrix
+
+N = 5;
+
+Ni = 5;
+Nj = Ni + Ni - 1;
+
+A = zeros(Ni);
+for i = 1:Ni
+    A(i,1:i) = 1:i;
+end
+
+fliplr(A) A[]
+
+%     A(i,Ni-(i-1):Ni+(i-1)) = 1;
