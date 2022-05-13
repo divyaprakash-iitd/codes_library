@@ -17,3 +17,7 @@ end
 A = [fliplr(A) A(:,2:end)];
 
 disp(A)
+
+% A = [A;flip(A(1:end-1,:))];
+% disp(A)
+% spy(A)
