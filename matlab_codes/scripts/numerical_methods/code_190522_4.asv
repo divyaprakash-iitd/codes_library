@@ -1,0 +1,13 @@
+clear; clc; close all;
+
+% Description: Generates terms in a series
+
+n = 3;
+
+s = 0;
+i = 0;
+while i < n
+    if
+    s = s + x^(3*i))/(5*i);
+    i = i + 1;
+end

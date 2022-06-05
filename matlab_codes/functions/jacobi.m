@@ -40,6 +40,6 @@ function [x, iter, err] = jacobi(A,b,tol,maxiter)
 
         err     = norm(xold-x)/norm(xold);
         xold    = x;
-        iter    = iter + 1;c
+        iter    = iter + 1;
     end
 end
